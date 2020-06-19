@@ -1,0 +1,42 @@
+Thoughts:
+1.hired attribute
+Q:For "hired" attrbute, whether to createa a optional Cab versus mandatory Cab relation for a driver.
+A:mandatory Cab with hired attribute bceause I assume a driver is always with a cab and is responsble for it
+
+Envisioning this database design. Main entities:
+---
+TaxiDriver
+TaxiCab
+TaxiRide
+TaxiFare
+TaxiPassenger
+
+In detail
+---
+TaxiDriver
+Base entity
+-has many TaxiRide
+-has one TaxiCab (optionally)
+*Will have boolean to indicate "hired". In future may want separate entity TaxiCab and place hired boolean on TaxiCab instead
+
+TaxiCab
+Base entity to link a TaxiDriver for "hired" attribute
+-has one TaxiDriver (option)
+*Relationship between taxi driver and taxi cab needed to record a history between these two entities
+
+
+
+
+TaxiRide
+Link entity between a taxi driver and taxi passenger
+-has one TaxiDriver
+-has one TaxiFare
+*In database, this table would have 2 foreign keys: TaxiDriver_FK, TaxiPassenger_FK
+
+TaxiFare
+Link entity to TaxiRide. Provides fare details of a taxi ride
+-has one TaxiRide
+
+TaxiPassenger
+Base entity
+-has many TaxiRide
