@@ -1,7 +1,7 @@
-﻿namespace sample_project1_dotNetCore.Server.Models
+﻿namespace DatabaseAccessLibrary
 {
     public abstract class FareBaseModel
     {
-        public abstract int calculate();
+        public abstract decimal calculate(TaxiRideModel TaxiRide);
     }
 }

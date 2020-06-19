@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using sample_project1_dotNetCore;
 using System.Data;
 
 namespace DatabaseAccessLibrary
@@ -8,11 +7,11 @@ namespace DatabaseAccessLibrary
     {
         // TODO - Add DateTime field using Dapper
         /// <summary>
-        /// Saves a new TaxiFare to the database
+        /// Saves a new TaxiRide to the database
         /// </summary>
-        /// <param name="model">The taxi fare information </param>
-        /// <returns>The taxi fare information, including the unique identifier</returns>
-        public TaxiFareModel CreateTaxiFare(TaxiFareModel model)
+        /// <param name="model">The taxi ride information </param>
+        /// <returns>The taxi ride information, including the unique identifier</returns>
+        public TaxiRideModel CreateTaxiRide(TaxiRideModel model)
         {
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("TaxiFare")))

@@ -1,26 +1,30 @@
-﻿using sample_project1_dotNetCore.Server.Models;
+﻿
 using System;
 
 
-namespace sample_project1_dotNetCore
+namespace DatabaseAccessLibrary
 {
     public class TaxiFareModel : FareBaseModel
     {
         /// <summary>
-        /// unique identifier for the prize
+        /// unique identifier for the taxi fare
         /// </summary>
         public int Id { get; set; }
 
-        public DateTime Date { get; set; }
+        private decimal Amount { get; set; }
 
-        public int Minutes { get; set; }
-            
-        public int Miles { get; set; }
-
-
-        public override int calculate()
+        public override decimal calculate(TaxiRideModel ride)
         {
-            throw new NotImplementedException();
+            decimal amt_miles = ride.Miles * Constants.MileMultiplier * Constants.UnitFee; 
+            decimal amt_minutes = Constants.UnitFee * ride.Minutes;
+            
+            return Constants.EntryFee + 
+                   amt_miles +
+                   amt_minutes +
+                   ride.Surcharge() +
+                   ride.PeakHourCharge() +
+                   ride.getNYFee() 
+           ;
         }
     }
 }

@@ -13,19 +13,16 @@ TaxiPassenger
 
 In detail
 ---
-TaxiDriver
-Base entity
--has many TaxiRide
--has one TaxiCab (optionally)
-*Will have boolean to indicate "hired". In future may want separate entity TaxiCab and place hired boolean on TaxiCab instead
-
 TaxiCab
 Base entity to link a TaxiDriver for "hired" attribute
 -has one TaxiDriver (option)
 *Relationship between taxi driver and taxi cab needed to record a history between these two entities
 
-
-
+TaxiDriver
+Base entity
+-has many TaxiRide
+-has one TaxiCab (optionally)
+*Will have boolean to indicate "hired". In future may want separate entity TaxiCab and place hired boolean on TaxiCab instead
 
 TaxiRide
 Link entity between a taxi driver and taxi passenger
