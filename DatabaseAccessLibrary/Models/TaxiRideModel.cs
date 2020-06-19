@@ -10,7 +10,7 @@ namespace DatabaseAccessLibrary
         /// 
         internal int Id { get; set; }
 
-        internal bool InNY { get; set; }
+        public bool InNY { get; set; }
 
         private TaxiFareModel TaxiFare;
 
@@ -25,6 +25,11 @@ namespace DatabaseAccessLibrary
             InNY = false;
             // passing ride so that fare has a link to the same ride
             TaxiFare = new TaxiFareModel(this);
+        }
+
+        public decimal getFare()
+        {
+            return TaxiFare.GetAmount();
         }
 
         public void CalculateFare()

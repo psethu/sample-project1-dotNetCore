@@ -15,6 +15,11 @@ namespace DatabaseAccessLibrary
 
         private TaxiRideModel ride;
 
+        public decimal GetAmount()
+        {
+            return Amount;
+        }
+
         public TaxiFareModel(TaxiRideModel ride)
         {
             this.ride = ride;

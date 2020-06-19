@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sample-project1-dotNetCore", "sample-project1-dotNetCore\sample-project1-dotNetCore.csproj", "{3C601EDC-9C48-4B1F-BDF0-1D1F95BE2115}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sample-project1-dotNetCore", "sample-project1-dotNetCore\sample-project1-dotNetCore.csproj", "{3C601EDC-9C48-4B1F-BDF0-1D1F95BE2115}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FABB6202-B21D-4790-86F6-3B5CD0DC93F7} = {FABB6202-B21D-4790-86F6-3B5CD0DC93F7}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAccessLibrary", "DatabaseAccessLibrary\DatabaseAccessLibrary.csproj", "{FABB6202-B21D-4790-86F6-3B5CD0DC93F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseAccessLibrary", "DatabaseAccessLibrary\DatabaseAccessLibrary.csproj", "{FABB6202-B21D-4790-86F6-3B5CD0DC93F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsTest", "ModelsTest\ModelsTest.csproj", "{4E2652B4-9FD8-4EDC-B51C-6DFF96BE9333}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 		{FABB6202-B21D-4790-86F6-3B5CD0DC93F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FABB6202-B21D-4790-86F6-3B5CD0DC93F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FABB6202-B21D-4790-86F6-3B5CD0DC93F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2652B4-9FD8-4EDC-B51C-6DFF96BE9333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2652B4-9FD8-4EDC-B51C-6DFF96BE9333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2652B4-9FD8-4EDC-B51C-6DFF96BE9333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2652B4-9FD8-4EDC-B51C-6DFF96BE9333}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
