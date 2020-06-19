@@ -5,5 +5,9 @@
     <RootNamespace>sample_project1_dotNetCore</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseAccessLibrary\DatabaseAccessLibrary.csproj" />
+  </ItemGroup>
+
 
 </Project>

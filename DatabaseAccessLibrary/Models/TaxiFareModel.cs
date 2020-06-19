@@ -6,11 +6,15 @@ namespace sample_project1_dotNetCore
 {
     public class TaxiFareModel : FareBaseModel
     {
+        /// <summary>
+        /// unique identifier for the prize
+        /// </summary>
+        public int Id { get; set; }
 
         public DateTime Date { get; set; }
 
         public int Minutes { get; set; }
-
+            
         public int Miles { get; set; }
 
 
