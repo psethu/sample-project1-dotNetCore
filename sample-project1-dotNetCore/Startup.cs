@@ -19,6 +19,17 @@ namespace sample_project1_dotNetCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.SetIsOriginAllowed(_ => true)
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +50,10 @@ namespace sample_project1_dotNetCore
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors("CorsPolicy");
+
+            
         }
     }
 }
