@@ -13,12 +13,19 @@ namespace DatabaseAccessLibrary
 
         private decimal Amount { get; set; }
 
-        public override decimal calculate(TaxiRideModel ride)
+        private TaxiRideModel ride;
+
+        public TaxiFareModel(TaxiRideModel ride)
+        {
+            this.ride = ride;
+        }
+
+        public override void calculate()
         {
             decimal amt_miles = ride.Miles * Constants.MileMultiplier * Constants.UnitFee; 
             decimal amt_minutes = Constants.UnitFee * ride.Minutes;
             
-            return Constants.EntryFee + 
+            Amount = Constants.EntryFee + 
                    amt_miles +
                    amt_minutes +
                    ride.Surcharge() +

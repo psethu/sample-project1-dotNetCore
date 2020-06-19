@@ -2,6 +2,6 @@
 {
     public abstract class FareBaseModel
     {
-        public abstract decimal calculate(TaxiRideModel TaxiRide);
+        public abstract void calculate();
     }
 }

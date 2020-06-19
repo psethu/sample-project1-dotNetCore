@@ -23,9 +23,14 @@ namespace DatabaseAccessLibrary
         public TaxiRideModel()
         {
             InNY = false;
-            TaxiFare = new TaxiFareModel();
+            // passing ride so that fare has a link to the same ride
+            TaxiFare = new TaxiFareModel(this);
         }
 
+        public void CalculateFare()
+        {
+            TaxiFare.calculate();
+        }
 
         //TODO - Implement logic if night surcharge required using Date
         public decimal Surcharge()
