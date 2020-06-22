@@ -1,7 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
-
-namespace DatabaseAccessLibrary.Models
+﻿namespace DatabaseAccessLibrary.Models
 {
     /// <summary>
     /// Surcharge for Part of Day
