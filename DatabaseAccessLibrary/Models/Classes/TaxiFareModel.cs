@@ -2,8 +2,9 @@
 using DatabaseAccessLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
-namespace DatabaseAccessLibrary
+namespace DatabaseAccessLibrary.Models
 {
     public class TaxiFareModel
     {
@@ -12,27 +13,38 @@ namespace DatabaseAccessLibrary
         /// </summary>
         public int Id { get; set; }
 
-        public decimal Total { get; set; }
-
-        public TaxiRideModel TaxiRide { get; set; }
+        public decimal Total { get; set; } = 0.0m;
 
         public List<SurchargeBaseModel> Surcharges { get; set; }
-        
 
-        public TaxiFareModel(TaxiRideModel ride)
+        public TaxiFareModel()
         {
-            this.TaxiRide = ride;
         }
 
-        public void Calculate()
+        public TaxiFareModel(List<SurchargeBaseModel> surCharges)
         {
+            this.Surcharges = surCharges;
+        }
+
+        public void Calculate(TaxiRideModel TaxiRide)
+        {
+            if (TaxiRide.Miles == 0 && TaxiRide.Minutes == 0)
+            {
+                Total = 0.0m;
+                return;
+            }
+
             decimal amtMiles = TaxiRide.Miles * Constants.MileMultiplier * Constants.Unit; 
             decimal amtMinutes = Constants.Unit * TaxiRide.Minutes;
             decimal totalSurcharge = 0.0m;
 
-            foreach (SurchargePodModel charge in Surcharges)
+            // need this check because foreach causes null ptr exception if array does not exist
+            if (Surcharges != null)
             {
-                totalSurcharge += charge.Amount;
+                foreach (SurchargeBaseModel charge in Surcharges)
+                {
+                    totalSurcharge += charge.Amount;
+                }
             }
 
             Total = Constants.Entry

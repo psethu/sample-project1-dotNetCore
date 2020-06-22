@@ -11,7 +11,7 @@ namespace DatabaseAccessLibrary
         public const decimal Entry = 3.00m;
         public const decimal Unit = 0.35m;        
         
-        public const int MileMultiplier = 5;
+        public const decimal MileMultiplier = 5.00m;
 
     }
 }

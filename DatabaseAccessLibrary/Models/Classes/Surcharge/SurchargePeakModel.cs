@@ -11,9 +11,19 @@ namespace DatabaseAccessLibrary.Models
     {
         public override decimal Amount { get; set; }
 
+        public PeakTime Status { get; set; }
+
         public int PeakStart { get; set; } = 4;
 
         public int PeakEnd { get; set; } = 8;
+
+        /// <summary>
+        /// Constructor to overload Calculation to always include Peak time
+        /// </summary>
+        public SurchargePeakModel(PeakTime status)
+        {
+            this.Status = status;
+        }
 
         /// <summary>
         /// Charge $1.00 Monday - Friday between 4:00 PM exclusive and 8:00 PM exclusive
@@ -30,8 +40,8 @@ namespace DatabaseAccessLibrary.Models
                     Amount = 1.00m;
             }
 
-
+            if (Status == PeakTime.Active)
+                Amount = 1.00m;
         }
-
     }
 }

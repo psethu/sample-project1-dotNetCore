@@ -13,4 +13,10 @@ namespace DatabaseAccessLibrary
         Afternoon,
         Night
     }
+
+    public enum PeakTime
+    {
+        Active,
+        Inactive
+    }
 }

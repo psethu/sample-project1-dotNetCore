@@ -18,12 +18,5 @@ namespace DatabaseAccessLibrary.Models
 
         public int Miles { get; set; }
 
-        public TaxiRideModel()
-        {
-            // passing ride so that fare has a link to the same ride
-            TaxiFare = new TaxiFareModel(this);
-        }
-
-
     }
 }
