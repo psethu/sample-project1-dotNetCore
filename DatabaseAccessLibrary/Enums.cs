@@ -6,4 +6,11 @@ namespace DatabaseAccessLibrary
         Sql,
         TextFile
     }
+
+    public enum PartOfDay
+    {
+        Morning,
+        Afternoon,
+        Night
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DatabaseAccessLibrary.Models;
 using System.Data;
 
 namespace DatabaseAccessLibrary
@@ -14,7 +15,7 @@ namespace DatabaseAccessLibrary
         public TaxiRideModel CreateTaxiRide(TaxiRideModel model)
         {
 
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("TaxiFare")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("TaxiRide")))
             {
                 var p = new DynamicParameters();
                 p.Add("@Minutes", model.Minutes);
@@ -28,5 +29,6 @@ namespace DatabaseAccessLibrary
                 return model;
             }
         }
+
     }
 }

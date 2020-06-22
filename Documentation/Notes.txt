@@ -3,13 +3,18 @@ Thoughts:
 Q:For "hired" attrbute, whether to createa a optional Cab versus mandatory Cab relation for a driver.
 A:mandatory Cab with hired attribute bceause I assume a driver is always with a cab and is responsble for it
 
-Envisioning this database design. Main entities:
+2.Business logic layer
+Model is known to simply represent equivalent database table. Heavy logic may need to be kept in a Business logics layer. For example,
+instead of the application performing the CalculateFare, we could have this be performed in the database.
+
+Envisioning this database design:
 ---
-TaxiDriver
 TaxiCab
+TaxiDriver
 TaxiRide
 TaxiFare
 TaxiPassenger
+TaxiSurcharge
 
 In detail
 ---
@@ -37,3 +42,6 @@ Link entity to TaxiRide. Provides fare details of a taxi ride
 TaxiPassenger
 Base entity
 -has many TaxiRide
+
+TaxiSurcharge
+-Added to support Composition design because a TaxiFare is composed of many surcharges. 

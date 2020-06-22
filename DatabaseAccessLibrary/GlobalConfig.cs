@@ -9,7 +9,6 @@ namespace DatabaseAccessLibrary
 
         public static void InitializeConnections(DatabaseType db)
         {
-            // enums are wonderful to use with switch statements
             switch (db)
             {
                 case DatabaseType.Sql:
