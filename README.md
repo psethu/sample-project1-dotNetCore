@@ -15,5 +15,5 @@ This project was created with .Net Core 3.1 using Visual Studio 2019
 1. Resolve CORS issue to communicate between the Angular client side and Dotnet server side
 2. Database connectivity
 3. Add complete CRUD http endpoints -- create, read, update, delete.
-4. Authentication/authorization
-5. Load balancing. To make system more fault tolerant when there is a huge amount of accesses in short period
+4. Authentication and authorization
+5. Leverage Hashicorp Consul for service discovery and load balancing, enabling SOA architecture and fault tolerance, respectively
